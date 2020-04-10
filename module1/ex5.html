@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        
+        <script>
+            var usuarios = [
+                {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+            for (x of usuarios) {
+                console.log(`O ${x.nome} possui as habilidades: ${x.habilidades.join(', ')}`)
+            }
+        </script>
+    </body>
+</html>
