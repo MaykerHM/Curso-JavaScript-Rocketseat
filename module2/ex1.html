@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Curso Javascript</title>
@@ -7,7 +7,14 @@
         <div id="app">
         </div>
         <script>
-            var color = 'red';
+            /*
+            
+            Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+            vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+            aparecer na tela.
+
+            */
+
             var containerElement = document.querySelector('#app');
             
             var index = 0;
@@ -18,11 +25,11 @@
                 containerElement.appendChild(square);
                 square.style.height = 100;
                 square.style.width = 100;
-                square.style.backgroundColor = window.color;
+                square.style.backgroundColor = "#f00";
 
                 var newScript = document.createElement("script");
-                var inlineScript = document.createTextNode("document.getElementsByTagName('button')[index].onclick = box;");
-                newScript.appendChild(inlineScript); 
+                var onclickScript = document.createTextNode("document.getElementsByTagName('button')[index].onclick = box;");
+                newScript.appendChild(onclickScript); 
                 containerScript.appendChild(newScript);
                 return index++;
            }
