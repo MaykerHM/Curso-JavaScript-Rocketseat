@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Curso Javascript</title>
@@ -7,7 +8,23 @@
         <div id="app">
         </div>
         <script>
-            var color = 'red';
+            /*
+            Ex2:
+
+            Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+            algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+                }
+            var newColor = getRandomColor(); // #E943F0
+            
+            */
+
             var containerElement = document.querySelector('#app');
             
             var index = 0;
@@ -22,27 +39,29 @@
                 return color;
                 }
 
-            var newColor = getRandomColor(); // #E943F0
-
             function box() {
                 var square = document.createElement('button');
                 containerElement.appendChild(square);
+
                 square.style.height = 100;
                 square.style.width = 100;
-                square.style.backgroundColor = window.color;
+                square.style.backgroundColor = '#f00';
 
                 var newScript = document.createElement("script");
-                var inlineScript = document.createTextNode(
-                    `document.getElementsByTagName('button')[index].onclick = box;
-                    document.getElementsByTagName('button')[index].onmouseover = function() {window.square.style.backgroundColor = window.newColor;};`);
+               
+                var onclickScript = document.createTextNode("document.getElementsByTagName('button')[index].onclick = box;");
 
-                newScript.appendChild(inlineScript); 
+                document.getElementsByTagName('button')[index].onmouseover = function() {
+                    square.style.backgroundColor = getRandomColor();
+                }
+                newScript.appendChild(onclickScript);
                 containerScript.appendChild(newScript);
+                
                 return index++;
            }
 
             box();
-            console.log(document.getElementsByTagName('script'));
+
         </script>
     </body>
 </html>
