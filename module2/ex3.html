@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <ul id="nomes">
+
+        </ul>
+        <script>
+            /*
+
+            A partir do seguinte vetor:
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+            ● Diego
+            ● Gabriel
+            ● Lucas
+            
+            */
+            
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            var newList = document.getElementById('nomes');
+            
+            for (var i=0; i<nomes.length; i++) {
+                var nome = document.createTextNode(nomes[i]);
+                var listElement = document.createElement('li');
+                listElement.appendChild(nome);
+                newList.appendChild(listElement);
+            }
+
+        </script>
+    </body>
+</html>
