@@ -36,16 +36,19 @@ const getUserRepos = async () => {
     })
 }
 
+listElement.setAttribute('style', 'white-space: pre-wrap');
+
 const showRepos = async () => {
     listElement.innerHTML = '';
-
+    
     const repos = await getUserRepos();
-
+    
     for (repo of repos) {
         var repoElement = document.createElement('li');
-        var repoText = document.createTextNode(JSON.stringify(repo));
-
-        repoElement.appendChild(repoText);
+        var repoText = JSON.stringify(repo, null, 2);
+        
+        // repoElement.setAttribute('style', 'white-space: pre-wrap');      Same effect.
+        repoElement.innerHTML = repoText;
         listElement.appendChild(repoElement);
     }
 }
